@@ -1,0 +1,14 @@
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <center>
+        <h1>homepage</h1>
+        medicines
+    </center>
+{% for medicine in medicines %}
+     <a href="{% url 'edit_medicine' medicine.id %}">edit - {{medicine}}</a>
+     <a href="{% url 'delete_medicine' medicine.id %}">delete - {{medicine}}</a>
+{% endfor %}
