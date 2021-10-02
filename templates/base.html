@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        {% load static %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>
-
-        {% comment %} block for page title {% endcomment %}
-        {% block title %}{% endblock title %} | Pharmacy Manager
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="system to manage pharmacy operations">
+        <meta name="author" content="onteki">
         
+        <title>            
+            {% block title %}{% endblock title %} | Pharmacy Manager
         </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-
-        {% comment %} block for extra css links {% endcomment %}
-        {% block extraStyles %}{% endblock extraStyles %}
-    </head>
-    <body>
-    {% comment %} main contents of page block {% endcomment %}
-    {% block content %}{% endblock content %}
-
-
-
-            <script src="" async defer>
-            </script>
             
-            {% comment %} extrajavascript block {% endcomment %}
-            {% block extraJavascripts %}{% endblock extraJavascripts %}
+        <!-- Bootstrap core CSS -->
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+        <!-- Custom styles for this template -->
+
+        <!-- block for extra css links -->
+        {% block extraStyles %}{% endblock extraStyles %}
+            
+        
+</head>
+<body>
+    <div class="container pt-5">
+{% block content %}
+
+{% endblock content %}
+</div>
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+    {% comment %} extrajavascript block {% endcomment %}
+    {% block extraJavascripts %}{% endblock extraJavascripts %}
+
+<script>
+    $(function(){
+        $(document).ready(function(){
+            console.log('ok now');
+        })
+    })
+</script>      
     </body>
 </html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    edit stock
+{% endblock title %}
+    
+    {% block content %}
+             
+        <center>add medicine</center>
+        <br>
+        <form method = 'post'>
+        {% csrf_token %}
+        {{form.as_p}}
+        
+        <button type="submit" class="btn btn-primary">save</button>
+   
+    {% endblock content %}

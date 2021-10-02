@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    stocks
+{% endblock title %}
+    
+
+
+{% block content %}
+
+{% for stock in stocks %}
+    {{stock}} - {{stock.expire_date}} <a href="{% url 'delete_stock' stock.pk %}">delete</a> | <a href="{% url 'edit_stock' stock.pk%}">edit</a> | is  expired {{stock.expired}}<br><br>
+    {% endfor %}
+
+<br><br>
+    <b>soon expired</b> 
+<br>
+{% for stoc in stocks %}
+    {% if stoc.soonexpired %}
+        {{stoc}} - {{stoc.expire_date}}<br>
+    {% endif %}
+        
+    {% endfor %}
+
+{% endblock content %}
+    

@@ -5,9 +5,11 @@ from medicine.models import Medicine
 class AddMedicineForm(forms.ModelForm):
     class Meta:
         model = Medicine
-        fields = '__all__'
+        fields = ("medicine_name", "category", "generic_name", "form", "discount", "side_effect", "image")
+
+
 
 class UpdateMedicineForm(forms.ModelForm):
     class Meta:
         model = Medicine
-        fields = '__all__'
+        fields =  ("medicine_name", "category", "generic_name", "form", "discount", "side_effect", "image")

@@ -1,14 +1,24 @@
+{% extends 'base.html' %}
 
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+{% block title %}
+    manage medicine
+{% endblock title %}
+    
 
+{% block content %}
+            <center>
+            <h1>homepage</h1>
+            {% if request.user.profile.can_add_medicine %}
+            <a href="{% url 'add_medicine' %}">add medicine</a> 
+            {% endif %}
 
-        <center>
-        <h1>homepage</h1>
-        medicines
-    </center>
-{% for medicine in medicines %}
-     <a href="{% url 'edit_medicine' medicine.id %}">edit - {{medicine}}</a>
-     <a href="{% url 'delete_medicine' medicine.id %}">delete - {{medicine}}</a>
-{% endfor %}
+    
+    <br>
+    <br>
+            medicines
+        </center>
+    {% for medicine in medicines %}
+         {{medicine}} <a href="{% url 'edit_medicine' medicine.id %}">edit</a> | <a href="{% url 'delete_medicine' medicine.id %}">delete</a> <br>
+    {% endfor %}
+{% endblock content %}
+    
